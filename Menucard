@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delicious Bites - Menu</title>
+</head>
+<body>
+
+  <header>
+    <h1>🍽️ Delicious Bites</h1>
+    <p>Your cozy spot for tasty treats!</p>
+    <hr>
+  </header>
+
+  <section>
+    <h2>🥗 Starters</h2>
+    <ul>
+      <li>Tomato Soup - ₹80</li>
+      <li>Spring Rolls - ₹120</li>
+      <li>Garlic Bread - ₹100</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍝 Main Course</h2>
+    <ul>
+      <li>Paneer Butter Masala - ₹220</li>
+      <li>Veg Biryani - ₹200</li>
+      <li>Chicken Curry - ₹250</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍰 Desserts</h2>
+    <ul>
+      <li>Gulab Jamun - ₹70</li>
+      <li>Ice Cream Sundae - ₹90</li>
+      <li>Chocolate Brownie - ₹100</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍹 Beverages</h2>
+    <ul>
+      <li>Mango Lassi - ₹60</li>
+      <li>Lemon Soda - ₹40</li>
+      <li>Cold Coffee - ₹80</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>📞 Contact Us</h2>
+    <p>Phone: +91-98765-43210</p>
+    <p>Email: contact@deliciousbites.com</p>
+    <p>Address: 123 Food Street, Flavor Town</p>
+  </section>
+
+  <footer>
+    <hr>
+    <p>© 2025 Delicious Bites. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
