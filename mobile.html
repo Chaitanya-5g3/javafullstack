@@ -1,0 +1,60 @@
+
+<html>
+<head>
+  <title>Mobile Number Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 220px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      background-color: #00b9f5;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Enter Your Mobile Number</h2>
+    <input type="text" id="mobileNumber" placeholder="Enter 10-digit Mobile Number"><br>
+    <button class="btn" onclick="validateAndGo()">Proceed</button>
+  </div>
+
+  <script>
+    function validateAndGo() {
+      const number = document.getElementById("mobileNumber").value.trim();
+      const cleaned = number.replace(/\D/g, "");
+
+      if (cleaned.length !== 10) {
+        alert("Please enter a valid 10-digit mobile number.");
+      } else {
+        window.location.href = "dashboard.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

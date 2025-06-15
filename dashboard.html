@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paytm Dashboard 2</title>
+  <link rel="stylesheet" href="dashboard2.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+}
+
+.navbar {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex: 1;
+}
+
+.nav-links li {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  min-width: 180px;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.sign-in {
+  background-color: #002970;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.banner {
+  background-color: #dff2ff;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 150px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.promo {
+  background-color: #00baf2;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.promo button {
+  background-color: white;
+  color: #00baf2;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upi-section {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+/* Sign In Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  max-width: 400px;
+  margin: 100px auto;
+  border-radius: 8px;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #002970;
+}
+
+.popup-content label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  background-color: #002970;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+</style>
+<script>
+  function openPopup() {
+    document.getElementById("signin-popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("signin-popup").style.display = "none";
+  }
+
+  // Optional: Close popup when clicking outside the form
+  window.onclick = function(event) {
+    const popup = document.getElementById("signin-popup");
+    if (event.target === popup) {
+      closePopup();
+    }
+  };
+  function handleLogin(event) {
+    event.preventDefault(); // Prevent actual form submit
+
+    const mobile = document.getElementById("mobile").value;
+    const otp = document.getElementById("otp").value;
+
+    // Optional: Validate mobile & OTP here
+
+    if (mobile.length === 10 && otp.length > 0) {
+      // Redirect to dashboard.html
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Please enter valid mobile number and OTP.");
+    }
+
+    return false;
+  }
+</script>
+
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLdvgkpAXltE6tSixsAEofMuPyhxliD6ihQ&s" alt="Paytm Logo" class="logo">
+    <ul class="nav-links">
+      <li class="dropdown">Ticket Booking
+        <ul class="dropdown-menu">
+          <li>Movie Tickets</li>
+          <li>Train Tickets</li>
+          <li>Flight Tickets</li>
+          <li>Bus Tickets</li>
+        </ul>
+      </li>
+      <li class="dropdown">Recharge & Bills
+        <ul class="dropdown-menu">
+          <li>Mobile Recharge</li>
+          <li>Electricity Bill</li>
+          <li>DTH Recharge</li>
+          <li>Municipal Bill</li>
+          <li>Water Bill</li>
+          <li>Gas & Cylinder</li>
+          <li>Loan EMI</li>
+          <li>Insurance Premium</li>
+          <li>Challan</li>
+        </ul>
+      </li>
+      <li class="dropdown">Payments & Services
+        <ul class="dropdown-menu">
+          <li>Credit cards</li>
+          <li>Personal Loan</li>
+          <li>Credit reports</li>
+          <li>online payments</li>
+          <li>paytm gold</li>
+        </ul>
+      </li>
+      <li class="dropdown">Paytm for Business
+        <ul class="dropdown-menu">
+          <li>Online Payments</li>
+          <li>Offline Payments</li>
+          <li>Business software</li>
+          <li>Business Leading</li>
+          <li>Insurance</li>
+        </ul>
+      </li>
+      <li class="dropdown">Company
+        <ul class="dropdown-menu">
+          <li>About</li>
+          <li>Blog</li>
+          <li>Latest News</li>
+          <li>Contact Us</li>
+          <li>Customer Care</li>
+          <li>Carrer</li>
+        </ul>
+      </li>
+    </ul>
+  <!-- <button class="sign-in">Sign In</button>-->
+  <button class="sign-in" onclick="openPopup()">Sign In</button>
+
+    <!-- Sign In Form Popup -->
+<div id="signin-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>Sign In</h2>
+    <form>
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" placeholder="Enter your mobile number" required>
+
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" placeholder="Enter OTP" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <h2>Fly into summer with Flat 15% Off</h2>
+  </div>
+
+  <!-- Recharge and Bills Section -->
+  <div class="container">
+    <div class="section">
+      <h3>Recharges</h3>
+      <div class="cards">
+        <div class="card">
+           <a href="mobile_recharge.html">Mobile Recharge</a>
+          
+        </div>
+        <div class="card"><a href="fastag.html">FASTag Recharge</a></div>
+        <div class="card"><a href="dth.html">DTH Recharge</a></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Bill Payments</h3>
+      <div class="cards">
+        <div class="card"><a href="electricity.html">Electricity Bill</a></div>
+        <div class="card"><a href="insurance.html">LIC / Insurance</a></div>
+        <div class="card"><a href="loan.html">Loan EMI</a></div>
+        <div class="card"><a href="products.html">View All Products</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Section -->
+  <div class="promo">
+    <p>Do <strong>Mobile Recharge</strong> and Win ₹100 cashback. Promo: TAKEITALL</p>
+    <button>Recharge Now →</button>
+  </div>
+
+  <!-- UPI Section -->
+  <div class="upi-section">
+    <h3>Pay anyone directly from your bank account.</h3>
+    <p>Make contactless & secure payments in-stores or online using Paytm UPI or Directly from your Bank account.</p>
+    <img src="appstore_badges.png" alt="App Store Badges" style="margin-top: 10px;">
+  </div>
+</body>
+</html>
