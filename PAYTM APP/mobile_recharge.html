@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Recharge</title>
+  <link rel="stylesheet" href="recharge.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f6ff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #00baf2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.operators {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.operators div {
+  text-align: center;
+  margin: 10px;
+}
+
+.operators img {
+  width: 50px;
+  height: 50px;
+}
+.footer  {
+  padding-left: 50%;
+
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Recharge or Pay Mobile Bill</h2>
+    
+    <form>
+      <label><input type="radio" name="type" checked> Prepaid</label>
+      <label><input type="radio" name="type"> Postpaid</label><br><br>
+
+      <input type="text" placeholder="Mobile Number" required><br><br>
+
+      <select>
+        <option value="" disabled selected>Select Operator</option>
+        <option value="airtel">Airtel</option>
+        <option value="bsnl">BSNL</option>
+        <option value="jio">Jio</option>
+        <option value="mtnl">MTNL DOLPHIN</option>
+        <option value="vi">VI</option>
+      </select><br><br>
+
+      <input type="number" placeholder="Amount" required><br><br>
+      <button type="submit">Proceed to Recharge</button>
+    </form>
+
+    <h3>Select an Operator</h3>
+    <div class="operators">
+      <div class="operator-logos">
+        <img src="https://cdn.iconscout.com/icon/free/png-128/free-airtel-logo-icon-download-in-svg-png-gif-file-formats--telecommunication-company-indian-companies-pack-logos-icons-2249151.png?f=webp" alt="Airtel">
+        <img src="https://e7.pngegg.com/pngimages/357/522/png-clipart-bharat-sanchar-nigam-limited-prepay-mobile-phone-home-business-phones-mobile-phones-internet-airtel-customer-care-text-logo-thumbnail.png" alt="BSNL">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Reliance_Jio_Logo.svg/500px-Reliance_Jio_Logo.svg.png" alt="Jio">
+        <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2020-09/07/full/1599467987-9877.png" alt="VI">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2025 Paytm</p>
+      <div class="social-icons">
+        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXw07xN8Bk4X8E3D3ZS8rTpMn5dg8wOeY1pdVOEypTpX7YR5k0ZJse9k8lZ9OykJpIQ&usqp=CAU" alt="Facebook"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
