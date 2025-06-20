@@ -1,4 +1,16 @@
 import java.util.Scanner;
+class CpyFun
+{
+    int j=0,i;
+   void CopyFunction(int a[],int n,int b[])
+   {
+       for(i=0;i<n;i++)
+   {
+       b[j]=a[i];
+       j++;    
+   }  
+   }   
+}
 class Copy
 {
   public static void main(String[] args)
@@ -13,9 +25,10 @@ class Copy
    for(i=0;i<n;i++)
    {
        a[i]=s.nextInt();
-          b[j]=a[i];
-           j++;
+        
    }
+   CpyFun c=new CpyFun();
+   c.CopyFunction(a,n,b);
     
    System.out.println(" the Copy of array is");
    for(i=0;i<n;i++)
