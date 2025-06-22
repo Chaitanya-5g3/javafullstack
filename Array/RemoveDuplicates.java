@@ -1,4 +1,26 @@
 import java.util.Scanner;
+class Remove
+{
+   int removefun(int a[],int n)
+ {  int i,j,k;
+    for(i=0;i<n;i++)
+     {
+       for(j=i+1;j<n ;j++)
+       {
+          if(a[i]==a[j])
+          {
+            for (k=j;k<n-1;k++)
+                    {
+                        a[k] = a[k + 1];
+                    }
+                    n--;
+                    j--; 
+          }
+       }
+     }
+return n;
+ } 
+}
 class RemoveDuplicates
 {
  public static void main(String[] args)
@@ -13,26 +35,12 @@ class RemoveDuplicates
     {
          a[i]=s.nextInt();
     }
-     for(i=0;i<n;i++)
-     {
-       for(j=i+1;j<n-i ;j++)
-       {
-          if(a[i]==a[j])
-          {
-            for (k=j;k<n-1;k++)
-                    {
-                        a[k] = a[k + 1];
-                    }
-                    n--;
-                    j--; 
-          }
-       }
-     }
-     System.out.println("After removing the duplicates in array ");
-     for(i=0;i<n;i++)
+    Remove r=new Remove();
+  int l= r.removefun(a,n);
+    System.out.println("After removing the duplicates in array ");
+     for(i=0;i<l;i++)
     {
          System.out.println(a[i]);
-    } 
- 
+    }
 }
 }
